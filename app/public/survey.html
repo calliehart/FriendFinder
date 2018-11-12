@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+
+      
+      h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 3em;
+        font-weight: bold;
+      }
+
+      h2 {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 1.5em;
+      }
+
+      footer {
+          margin-top: 20px;
+      }
+
+      .btn {
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 30px 0 10px 0;
+          border-radius: 0;
+          width: 500px;
+      }
+
+      #logo {
+          width: 500px;
+          text-align: center;
+      }
+  
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <img src="../images/Friends_logo.svg" alt="Friends Show Logo" id="logo">
+            <h1 class="text-center">Finder</h1>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>Survey Questions</h2>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <h3>About You</h3>
+                    <hr>
+                    <div class="form-group">
+                        <label for="nameUser">Name: </label>
+                        <input type="text" class="form-control" id="nameUser">
+                        <small>*Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="photoLink">Photo Link: </label>
+                        <input type="text" class="form-control" id="photoLink">
+                        <small>*Required</small>
+                    </div>
+                    <hr>
+                    <h3>Question 1</h3>
+                    <h5>How goofy are you?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question1">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not goofy)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very goofy)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 2</h3>
+                    <h5>How intelligent are you?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question2">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not intelligent)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very intelligent)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 3</h3>
+                    <h5>How committed are you usually in relationships?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question3">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not committed)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very committed)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 4</h3>
+                    <h5>How geeky are you?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question4">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not geeky)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very geeky)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 5</h3>
+                    <h5>How thoughtful are you?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question5">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not thoughtful)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very thoughtful)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 6</h3>
+                    <h5>How willing are you to share food?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question6">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not willing)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very willing)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 7</h3>
+                    <h5>How fancy do you like your coffee?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question7">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not fancy)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very fancy)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 8</h3>
+                    <h5>How strong is your desire for marriage?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question8">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not strong)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very strong)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 9</h3>
+                    <h5>How much do you want kids?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question9">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not really wanting kids)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Already have them!)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3>Question 10</h3>
+                    <h5>How creative are you?</h5>
+                    <div class="input-group">
+                        <select class="custom-select" id="question10">
+                            <option selected>Choose...</option>
+                            <option value="1">One (Not creative)</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five (Very creative)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-primary text-center p-4" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-primary"><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/calliehart/FriendFinder.git">GitHub Repo</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(".submit").on("click", function(event) {
+
+    event.preventDefault();
+
+    let newSearch = {
+        userName: $("#nameUser").val().trim(),
+        userPhoto: $("#photoLink").val().trim(),
+        quizAnswers: [
+            $("#question1").val(),
+            $("#question2").val(),
+            $("#question3").val(),
+            $("#question4").val(),
+            $("#question5").val(),
+            $("#question6").val(),
+            $("#question7").val(),
+            $("#question8").val(),
+            $("#question9").val(),
+            $("#question10").val() 
+        ]
+    };
+
+    console.log(newSearch);
+
+});
+
+
+</script>
