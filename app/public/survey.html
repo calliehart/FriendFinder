@@ -45,7 +45,7 @@
 <body>
     <div class="container">
         <div class="jumbotron text-center">
-            <img src="images/Friends_logo.svg" alt="Friends Show Logo" id="logo">
+            <img src="app/public/images/Friends_logo.svg" alt="Friends Show Logo" id="logo">
             <h1 class="text-center">Finder</h1>
         </div>
         <div class="card">
@@ -218,8 +218,16 @@
                     <button type="button" class="close ml-auto" data-dismiss="modal">x</button>
                 </div>
                 <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
+                    <div class="row">
+                        <div class="col">
+                            <h2 id="result-name"></h2>
+                            <img id="result-img" src="" alt="" style="width: 200px;">
+                        </div>
+                        <div class="col">
+                            <h2 id="match-name"></h2>
+                            <img id="match-img" src="" alt="" style="width: 200px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -232,6 +240,9 @@
     $(".submit").on("click", function(event) {
 
     event.preventDefault();
+
+    let userName = $("#nameUser").val().trim();
+    let userPhoto = $("#photoLink").val().trim();
 
     function validate() {
         let valid = true;
@@ -250,8 +261,8 @@
 
     if (validate()) {
         let newSearch = {
-        userName: $("#nameUser").val().trim(),
-        userPhoto: $("#photoLink").val().trim(),
+        userName: userName,
+        userPhoto: userPhoto,
         quizAnswers: [
             $("#question1").val(),
             $("#question2").val(),
@@ -268,8 +279,10 @@
         console.log(newSearch);
 
         $.post("/api/friends", newSearch, function(data){
-            $("#match-name").text(data.userName);
-            $("#match-img").attr("src", data.userPhoto);
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+            $("#result-name").text(userName);
+            $("#result-img").attr("src", userPhoto);
 
             $(".modal").modal("toggle");
         });
